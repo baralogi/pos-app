@@ -19,10 +19,10 @@ include "config.php";
 
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-light bg-light" style="margin-bottom:1%">
+    <nav class="navbar navbar-light bg-light" style="margin-bottom:1%;">
         <a class="navbar-brand" href="#">
-            <img src="../assets/global/img/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="" style="margin-right:0.5em;">
-            Point Of Sale
+            <img src="../assets/global/img/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="" style="margin-right:0.2em;">
+            <label> Point Of Sale </label>
         </a>
     </nav>
     <!-- navbar -->

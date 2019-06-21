@@ -19,7 +19,7 @@ if($jk=='L'){
     $jkw = 'Perempuan';
 }
 
-$query = "UPDATE pegawai SET kode_jabatan='$jabatan', nama_depan='$nama_depan', nama_belakang='$nama_belakang', 'alamat=$alamat','no_tlp=$no_tlp','email=$email','tgl_lahir=$ttl','jk=$jkw','pendidikan=$pendidikan','tgl_rekrut=$hire_date' where nip='$id'";
+$query = "UPDATE pegawai SET kode_jabatan='$jabatan', nama_depan='$nama_depan', nama_belakang='$nama_belakang', alamat='$alamat', no_tlp='$no_tlp', email='$email', tgl_lahir='$ttl', jk='$jkw', pendidikan='$pendidikan',tgl_rekrut='$hire_date' where nip='$nip'";
 $succes = mysqli_query($conn, $query);
 if($succes){
     header('location: pegawai.php');
