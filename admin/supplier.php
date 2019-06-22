@@ -14,7 +14,7 @@ $query = "SELECT * FROM supplier";
 $row = mysqli_query($conn, $query);
 ?>
 
-<h3>Data pegawai</h3>
+<h3>Data Supplier</h3>
 <div class="card">
     <div class="card-body">
         <a href="supplier-store.php"><button type="button" class="btn btn-success" style="margin-bottom:2%; margin-top:2%;">+ Tambah</button></a>

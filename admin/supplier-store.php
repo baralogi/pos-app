@@ -4,7 +4,7 @@ include 'header.php';
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-        <li class="breadcrumb-item"><a href="barang.php">Supplier</a></li>
+        <li class="breadcrumb-item"><a href="supplier.php">Supplier</a></li>
         <li class="breadcrumb-item active" aria-current="page">Tambah Supplier</li>
     </ol>
 </nav>
@@ -20,7 +20,7 @@ include 'header.php';
                 }
             }
             ?>
-            <div class="form-group">
+            <div class="form-group col-md-4">
                 <input type="text" class="form-control" placeholder="Kode Supplier" name="kode" required> 
             </div>
             <div class="row form-group">
@@ -51,7 +51,7 @@ include 'header.php';
             <div class="form-group">
                 <textarea class="form-control" rows="3" placeholder="Keterangan" name="ket"></textarea>
             </div>
-            <a href="barang.php"><button type="button" class="btn btn-secondary"><span class="fa fa-arrow-left"></span></button></a>
+            <a href="supplier.php"><button type="button" class="btn btn-secondary"><span class="fa fa-arrow-left"></span></button></a>
             <input type="submit" class="btn btn-primary" value="Save">
         </form>
     </div>
