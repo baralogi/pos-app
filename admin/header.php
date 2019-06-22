@@ -44,7 +44,7 @@ include "config.php";
                     <li class="nav-item">
                         <a class="nav-link" href="#master" data-toggle="collapse"><span class="fa fa-briefcase"></span> Master</a>
                         <ul id="master" class="nav-item collapse">
-                            <a class="nav link" href="barang.php"><span class="drop"></span> Data Barang</a></a>
+                            <a class="nav link" href="barang.php">Data Barang</a>
                             <a class="nav link" href="pegawai.php">Data Pegawai</a>
                             <a class="nav link" href="supplier.php">Data Supplier</a>
                         </ul>
