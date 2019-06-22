@@ -12,8 +12,8 @@ $hjual = $_POST['hjual'];
 $query = "INSERT INTO barang VALUES('$kode', '$kategori', '$nama', '$satuan', '$stok' ,'$hbeli', '$hjual', null)";
 $succes = mysqli_query($conn, $query);
 
-$query = "SELECT * FROM barang";
-$row = mysqli_query($conn, $query);
+$querys = "SELECT * FROM barang";
+$row = mysqli_query($conn, $querys);
 while ($data = mysqli_fetch_assoc($row)) {
 
 if($succes){

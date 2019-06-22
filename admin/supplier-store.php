@@ -33,10 +33,10 @@ include 'header.php';
             </div>
             <div class="row form-group">
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="alamat" name="alamat" required>
+                    <input type="text" class="form-control" placeholder="Alamat" name="alamat" required>
                 </div>
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="kota" name="kota" required>
+                    <input type="text" class="form-control" placeholder="Kota" name="kota" required>
                 </div>
             </div>
             <div class="form-group">
@@ -56,6 +56,8 @@ include 'header.php';
         </form>
     </div>
 </div>
+
+
 <?php
 include 'footer.php';
 ?>

@@ -22,8 +22,8 @@ if($jk=='L'){
 $query = "INSERT INTO pegawai VALUES('$nip','$jabatan','$nama_depan','$nama_belakang','$alamat','$no_tlp','$email','$ttl','$jkw','$pendidikan','$hire_date')";
 $succes = mysqli_query($conn, $query);
 
-$query = "SELECT * FROM pegawai";
-$row = mysqli_query($conn, $query);
+$querys = "SELECT * FROM pegawai";
+$row = mysqli_query($conn, $querys);
 while ($data = mysqli_fetch_assoc($row)) {
 
     if($succes){
