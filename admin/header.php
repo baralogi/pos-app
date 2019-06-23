@@ -1,4 +1,6 @@
 <?php
+session_start();
+include 'cek.php';
 include "config.php";
 ?>
 
@@ -24,6 +26,9 @@ include "config.php";
             <img src="../assets/global/img/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="" style="margin-right:0.2em;">
             <label> Point Of Sale </label>
         </a>
+        <div class="">
+        <label>Hy , <?php echo $_SESSION['username']  ?>&nbsp&nbsp<span class="fa fa-user"></span></label>
+        </div>
     </nav>
     <!-- navbar -->
 
@@ -50,10 +55,13 @@ include "config.php";
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Section 3</a>
+                        <a class="nav-link" href="#trans" data-toggle="collapse"><span class="fa fa-exchange"></span> Transaksi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Section 4</a>
+                        <a class="nav-link" href="#trans" data-toggle="collapse"><span class="fa fa-file-word-o"></span> Laporan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php"><span class="fa fa-sign-out"></span> Log Out</a>
                     </li>
                 </ul>
             </div>
