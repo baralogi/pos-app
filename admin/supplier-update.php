@@ -18,7 +18,7 @@ while ($data = mysqli_fetch_assoc($row)) {
     <h3>Update Data Supplier</h3>
     <div class="card">
         <div class="card-body">
-            <form action="supplier-store-proses.php" method="POST">
+            <form action="supplier-update-proses.php" method="POST">
                 <?php
                 if (isset($_GET['pesan'])) {
                     if ($_GET['pesan'] == "gagal") {
@@ -59,7 +59,7 @@ while ($data = mysqli_fetch_assoc($row)) {
                     <textarea class="form-control" rows="3" placeholder="Keterangan" name="ket"><?php echo $data['keterangan']; ?></textarea>
                 </div>
                 <a href="supplier.php"><button type="button" class="btn btn-secondary"><span class="fa fa-arrow-left"></span></button></a>
-                <input type="submit" class="btn btn-primary" value="Save">
+                <input type="submit" class="btn btn-primary" value="Update">
             </form>
         </div>
     </div>
