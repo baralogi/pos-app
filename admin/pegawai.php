@@ -1,6 +1,10 @@
 <?php
 include 'header.php';
-
+if ($kolom[1] == false) {
+    session_start();
+    session_destroy();
+    header("location:../index.php");
+}
 ?>
 
 <nav aria-label="breadcrumb">
@@ -42,7 +46,7 @@ $row = mysqli_query($conn, $query);
                     <td><?php echo $data["tgl_rekrut"]; ?></td>
                     <td>
                         <a href="pegawai-update.php?nip=<?php echo $data['nip']; ?>"><button type="button" class="btn btn-primary btn-sm" title="Edit"><span class="fa fa-pencil"></span></button></a>
-                        <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='pegawai-delete.php?nip=<?php echo $data['nip']; ?>' }" class="btn btn-danger btn-sm"><span class="fa fa-trash"></span></a> 
+                        <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='pegawai-delete.php?nip=<?php echo $data['nip']; ?>' }" class="btn btn-danger btn-sm"><span class="fa fa-trash"></span></a>
                         <a href="pegawai-detail.php?nip=<?php echo $data['nip']; ?>"><button type="button" class="btn btn-info btn-sm" title="Detail"><span class="fa fa-info-circle"></span></button></a>
                     </td>
                     </td>

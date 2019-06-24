@@ -1,5 +1,10 @@
 <?php
 include 'header.php';
+if ($kolom[2] == false) {
+    session_start();
+    session_destroy();
+    header("location:../index.php");
+}
 ?>
 
 <nav aria-label="breadcrumb">
