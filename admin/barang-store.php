@@ -13,13 +13,13 @@ include 'header.php';
 <div class="card">
     <div class="card-body">
         <form action="barang-store-proses.php" method="POST">
-        <?php
-                    if (isset($_GET['pesan'])) {
-                        if ($_GET['pesan'] == "gagal") {
-                            echo "<div class='alert alert-danger' role='alert'></span>  Kode Barang Sudah Terdaftar !!</div>";
-                        }
-                    }
-                    ?> 
+            <?php
+            if (isset($_GET['pesan'])) {
+                if ($_GET['pesan'] == "gagal") {
+                    echo "<div class='alert alert-danger' role='alert'></span>  Kode Barang Sudah Terdaftar !!</div>";
+                }
+            }
+            ?>
             <div class="row form-group">
                 <div class="col">
                     <input type="text" class="form-control" placeholder="Kode Barang" name="kode" required>
@@ -38,7 +38,9 @@ include 'header.php';
                     </select>
                 </div>
                 <div class="col">
-                    <button type="submit" class="btn btn-success">+</button>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+                        +
+                    </button>
                 </div>
             </div>
             <div class="row form-group">
@@ -63,6 +65,33 @@ include 'header.php';
         </form>
     </div>
 </div>
+
+<!-- Modal Kategori-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Kategori</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="kategori-store-proses.php" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="kategori" placeholder="Nama Kategori">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <input type="submit" class="btn btn-primary" value="Save">
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 <?php
 include 'footer.php';
 ?>
