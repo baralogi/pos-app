@@ -46,7 +46,7 @@ $row = mysqli_query($conn, $query);
                     <td><?php echo $data["email"]; ?></td>
                     <td>
                         <a href="supplier-update.php?id=<?php echo $data['kode_supplier']; ?>"><button type="button" class="btn btn-primary btn-sm" title="Edit"><span class="fa fa-pencil"></span></button></a>
-                        <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='supplier-delete.php?id=<?php echo $data['kode_supplier']; ?>' }" class="btn btn-danger btn-sm"><span class="fa fa-trash"></span></a> 
+                        <a href="supplier-delete.php?id=<?php echo $data['kode_supplier']; ?>" onclick="deleted()"><button type="button" class="btn btn-danger btn-sm" title="Delete"><span class="fa fa-trash"></span></button></a>
                         <a href="supplier-detail.php?id=<?php echo $data['kode_supplier']; ?>"><button type="button" class="btn btn-info btn-sm" title="Detail"><span class="fa fa-info-circle"></span></button></a>
                     </td>
                     </td>

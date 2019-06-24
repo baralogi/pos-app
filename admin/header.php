@@ -21,6 +21,12 @@ $username = $_SESSION['username'];
         function forbidden() {
             alert("Anda tidak bisa mengakses halaman ini!");
         }
+        function logout() {
+            confirm("Apakah anda yakin ingin keluar??");
+        }
+        function deleted() {
+            confirm("Apakah anda yakin ingin menghapus data ini ??")
+        }
     </script>
     <title>Point of Sale</title>
 </head>
@@ -102,7 +108,7 @@ $username = $_SESSION['username'];
                         <a class="nav-link" href="#trans" data-toggle="collapse"><span class="fa fa-sticky-note-o"></span> Laporan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="logout.php"><span class="fa fa-sign-out"></span> Log Out</a>
+                        <a class="nav-link" href="logout.php" onclick="logout()"><span class="fa fa-sign-out"></span> Log Out</a>
                     </li>
                 </ul>
             </div>
