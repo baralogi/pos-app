@@ -95,27 +95,27 @@ include 'header.php';
                         </div>
                         <div class="card-body">
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" name="barang" id="barang">
+                                <input type="checkbox" class="custom-control-input" name="m_barang" id="barang" value="1">
                                 <label class="custom-control-label" for="barang">Master Barang</label>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" name="pegawai" id="pegawai">
+                                <input type="checkbox" class="custom-control-input" name="m_pegawai" id="pegawai" value="1">
                                 <label class="custom-control-label" for="pegawai">Master Pegawai</label>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" name="supplier" id="supplier">
+                                <input type="checkbox" class="custom-control-input" name="m_supplier" id="supplier" value="1">
                                 <label class="custom-control-label" for="supplier">Master Supplier</label>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" name="t1" id="t1">
+                                <input type="checkbox" class="custom-control-input" name="t1" id="t1" value="1"> 
                                 <label class="custom-control-label" for="t1">Transaksi Pembelian</label>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" name="t2" id="t2">
+                                <input type="checkbox" class="custom-control-input" name="t2" id="t2" value="1">
                                 <label class="custom-control-label" for="t2">Transaksi Penjualan</label>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" name="l" id="l">
+                                <input type="checkbox" class="custom-control-input" name="l1" id="l" value="1">
                                 <label class="custom-control-label" for="l">Laporan</label>
                             </div>
                         </div>
