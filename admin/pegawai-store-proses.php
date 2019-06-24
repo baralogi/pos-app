@@ -12,6 +12,8 @@ $ttl = $_POST['tgl_lahir'];
 $jk = $_POST['jk'];
 $pendidikan = $_POST['pendidikan'];
 $hire_date = $_POST['tgl_rekrut'];
+$user = $_POST['user'];
+$pass = $_POST['pass'];
 $m_barang = $_POST['m_barang'];
 $m_pegawai = $_POST['m_pegawai'];
 $m_supplier = $_POST['m_supplier'];
@@ -39,7 +41,7 @@ if($m_barang==null){
     $l1 = '0';
 }
 
-$query = "INSERT INTO pegawai VALUES('$nip','$jabatan','$nama_depan','$nama_belakang','$alamat','$no_tlp','$email','$ttl','$jkw','$pendidikan','$hire_date', null, null, '$m_barang', '$m_pegawai', '$m_supplier', '$t1', '$t2', '$l1')";
+$query = "INSERT INTO pegawai VALUES('$nip','$jabatan','$nama_depan','$nama_belakang','$alamat','$no_tlp','$email','$ttl','$jkw','$pendidikan','$hire_date', $user, $pass, '$m_barang', '$m_pegawai', '$m_supplier', '$t1', '$t2', '$l1')";
 $succes = mysqli_query($conn, $query);
 
 $querys = "SELECT * FROM pegawai";

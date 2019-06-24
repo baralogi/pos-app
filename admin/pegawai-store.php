@@ -89,6 +89,19 @@ include 'header.php';
                     </div>
                 </div>
                 <div class="col-md-4">
+                    <div class="card" style="margin-bottom: 1em;">
+                        <div class="card-header">
+                            Data User Login
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Username" name="user" required>
+                            </div>
+                            <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password" name="pass" required>
+                            </div>
+                        </div>
+                    </div>
                     <div class="card">
                         <div class="card-header">
                             Hak Akses
@@ -107,7 +120,7 @@ include 'header.php';
                                 <label class="custom-control-label" for="supplier">Master Supplier</label>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" name="t1" id="t1" value="1"> 
+                                <input type="checkbox" class="custom-control-input" name="t1" id="t1" value="1">
                                 <label class="custom-control-label" for="t1">Transaksi Pembelian</label>
                             </div>
                             <div class="custom-control custom-checkbox">
