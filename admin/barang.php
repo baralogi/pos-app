@@ -1,5 +1,10 @@
 <?php
 include 'header.php';
+if ($kolom[0] == false) {
+    session_start();
+    session_destroy();
+    header("location:../index.php");
+}
 ?>
 
 <?php
@@ -40,7 +45,7 @@ $row = mysqli_query($conn, $query);
                     <td>Rp. <?php echo number_format($data["harga_jual"]); ?></td>
                     <td>
                         <a href="barang-update.php?kode_barang=<?php echo $data['kode_barang']?>"><button type="button" class="btn btn-primary btn-sm" title="Edit"><span class="fa fa-pencil"></span></button></a>
-                        <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='barang-delete.php?kode_barang=<?php echo $data['kode_barang']; ?>' }" class="btn btn-danger btn-sm"><span class="fa fa-trash"></span></a>
+                        <a href="barang-delete.php?kode_barang=<?php echo $data['kode_barang']; ?>" onclick="deleted()"><button type="button" class="btn btn-danger btn-sm" title="Delete"><span class="fa fa-trash"></span></button></a>
                         <a href="barang-detail.php?kode_barang=<?php echo $data['kode_barang']; ?>"><button type="button" class="btn btn-info btn-sm" title="Detail"><span class="fa fa-info-circle"></span></button></a>
                     </td>
                     </td>

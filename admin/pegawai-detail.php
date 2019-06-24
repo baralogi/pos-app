@@ -5,7 +5,7 @@ include 'header.php';
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-        <li class="breadcrumb-item"><a href="barang.php">Pegawai</a></li>
+        <li class="breadcrumb-item"><a href="pegawai.php">Pegawai</a></li>
         <li class="breadcrumb-item active" aria-current="page">Detail Pegawai</li>
     </ol>
 </nav>
@@ -75,7 +75,7 @@ include 'header.php';
                         <td><?php echo $data['tgl_rekrut'] ?></td>
                     </tr>
                     <tr>
-                        <td><a href="barang.php"><button type="button" class="btn btn-secondary"><span class="fa fa-arrow-left"></span></button></a></td>
+                        <td><a href="pegawai.php"><button type="button" class="btn btn-secondary"><span class="fa fa-arrow-left"></span></button></a></td>
                     </tr>
                 </tbody>
             </table>

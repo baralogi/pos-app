@@ -15,6 +15,7 @@
         <form action="login-act.php" method="post">
             <div class="col-md-4 panel mx-auto">
                 <div class="border border-light" id="border">
+                    <h3 style="text-align:center; ">Login</h3>
                     <div class="form-group top">
                         <label for="username">Username</label>
                         <input type="text" class="form-control" name="username" id="username" placeholder="Enter username" required>
@@ -28,13 +29,13 @@
                     </div>
                 </div>
                 <?php
-                    if (isset($_GET['pesan'])) {
-                        if ($_GET['pesan'] == "gagal") {
-                            echo "<div style='margin-top:5%' class='alert alert-danger' role='alert'></span>  Login Gagal !! Username atau Password Salah !!</div>";
-                        }
+                if (isset($_GET['pesan'])) {
+                    if ($_GET['pesan'] == "gagal") {
+                        echo "<div style='margin-top:5%' class='alert alert-danger' role='alert'></span>  Login Gagal !! Username atau Password Salah !!</div>";
                     }
-                    ?>  
-            </div> 
+                }
+                ?>
+            </div>
         </form>
     </div>
 
@@ -42,4 +43,5 @@
 <script src="./assets/global/js/jquery-3.3.1.slim.min.js"></script>
 <script src="./assets/global/js/popper.min.js"></script>
 <script src="./assets/global/js/bootstrap.min.js"></script>
+
 </html>
