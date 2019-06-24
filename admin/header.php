@@ -99,7 +99,7 @@ $username = $_SESSION['username'];
                         <a class="nav-link" href="#trans" data-toggle="collapse"><span class="fa fa-exchange"></span> Transaksi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#trans" data-toggle="collapse"><span class="fa fa-file-word-o"></span> Laporan</a>
+                        <a class="nav-link" href="#trans" data-toggle="collapse"><span class="fa fa-sticky-note-o"></span> Laporan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php"><span class="fa fa-sign-out"></span> Log Out</a>

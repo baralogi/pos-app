@@ -41,7 +41,7 @@ if($m_barang==null){
     $l1 = '0';
 }
 
-$query = "INSERT INTO pegawai VALUES('$nip','$jabatan','$nama_depan','$nama_belakang','$alamat','$no_tlp','$email','$ttl','$jkw','$pendidikan','$hire_date', $user, $pass, '$m_barang', '$m_pegawai', '$m_supplier', '$t1', '$t2', '$l1')";
+$query = "INSERT INTO pegawai VALUES('$nip','$jabatan','$nama_depan','$nama_belakang','$alamat','$no_tlp','$email','$ttl','$jkw','$pendidikan','$hire_date', '$user', '$pass', '$m_barang', '$m_pegawai', '$m_supplier', '$t1', '$t2', '$l1')";
 $succes = mysqli_query($conn, $query);
 
 $querys = "SELECT * FROM pegawai";

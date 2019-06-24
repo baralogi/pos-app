@@ -133,11 +133,10 @@ include 'header.php';
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
             <div class="form-group">
-                <a href="barang.php"><button type="button" class="btn btn-secondary"><span class="fa fa-arrow-left"></span></button></a>
+                <a href="pegawai.php"><button type="button" class="btn btn-secondary"><span class="fa fa-arrow-left"></span></button></a>
                 <input type="submit" class="btn btn-primary" value="Submit">
             </div>
         </form>
