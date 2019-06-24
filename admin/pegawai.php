@@ -17,7 +17,7 @@ $row = mysqli_query($conn, $query);
 <h3>Data pegawai</h3>
 <div class="card">
     <div class="card-body">
-        <a href="pegawai-store.php"><button type="button" class="btn btn-success" style="margin-bottom:2%; margin-top:2%;">+ Tambah</button></a>
+        <a href="pegawai-store.php"><button type="button" class="btn btn-sm btn-success" style="margin-bottom:1%; ">+ Tambah</button></a>
         <table class="table table-sm table-bordered table-hover" style=" text-align: center;">
             <thead class="table-dark">
                 <th>No</th>

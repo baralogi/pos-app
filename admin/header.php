@@ -2,6 +2,7 @@
 session_start();
 include 'cek.php';
 include "config.php";
+$username = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +17,11 @@ include "config.php";
     <script src="../assets/global/js/jquery-3.4.1.js"></script>
     <script src="../assets/global/js/popper.min.js"></script>
     <script src="../assets/global/js/bootstrap.min.js"></script>
+    <script>
+        function forbidden() {
+            alert("Anda tidak bisa mengakses halaman ini!");
+        }
+    </script>
     <title>Point of Sale</title>
 </head>
 
@@ -27,11 +33,23 @@ include "config.php";
             <label> Point Of Sale </label>
         </a>
         <div class="">
-        <label>Hy , <?php echo $_SESSION['username']  ?>&nbsp&nbsp<span class="fa fa-user"></span></label>
+            <label>Hy , <?php echo $username; ?>&nbsp&nbsp<span class="fa fa-user"></span></label>
         </div>
     </nav>
     <!-- navbar -->
 
+    <?php
+    $query = "SELECT m_barang, m_pegawai, m_supplier, t1, t2, l FROM pegawai where username='$username'";
+    $row = mysqli_query($conn, $query);
+    while ($data = mysqli_fetch_assoc($row)) {
+        $kolom[0] = $data['m_barang'];
+        $kolom[1] = $data['m_pegawai'];
+        $kolom[2] = $data['m_supplier'];
+        $kolom[3] = $data['t1'];
+        $kolom[4] = $data['t2'];
+        $kolom[5] = $data['l'];
+    }
+    ?>
     <!-- sidebar -->
     <div class="container-fluid">
         <div class="row">
@@ -41,7 +59,6 @@ include "config.php";
                         <img class="img-thumbnail img-fluid" src="../assets/global/img/star-lord.png">
                     </div>
                 </div>
-
                 <ul class="nav nav-pills flex-column">
                     <li class="nav-item">
                         <a class="nav-link active" href="index.php"><span class="fa fa-area-chart"></span> Dashboard</a>
@@ -49,9 +66,33 @@ include "config.php";
                     <li class="nav-item">
                         <a class="nav-link" href="#master" data-toggle="collapse"><span class="fa fa-briefcase"></span> Master</a>
                         <ul id="master" class="nav-item collapse">
-                            <a class="nav link" href="barang.php">Data Barang</a>
-                            <a class="nav link" href="pegawai.php">Data Pegawai</a>
-                            <a class="nav link" href="supplier.php">Data Supplier</a>
+                            <?php
+                            if ($kolom[0]) {
+                                ?>
+                                <a class="nav link" href="barang.php">Data Barang</a>
+                            <?php
+                        } else { ?>
+                                <a class="nav link" href="#" onclick="forbidden()">Data Barang</a>
+                            <?php
+                        } ?>
+                            <?php
+                            if ($kolom[1]) {
+                                ?>
+                                <a class="nav link" href="pegawai.php">Data Pegawai</a>
+                            <?php
+                        } else { ?>
+                                <a class="nav link" href="#" onclick="forbidden()">Data Pegawai</a>
+                            <?php
+                        } ?>
+                            <?php
+                            if ($kolom[2]) {
+                                ?>
+                                <a class="nav link" href="supplier.php">Data Supplier</a>
+                            <?php
+                        } else { ?>
+                                <a class="nav link" href="#" onclick="forbidden()">Data Supplier</a>
+                            <?php
+                        } ?>
                         </ul>
                     </li>
                     <li class="nav-item">
