@@ -103,6 +103,17 @@ $username = $_SESSION['username'];
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#trans" data-toggle="collapse"><span class="fa fa-exchange"></span> Transaksi</a>
+                        <ul id="trans" class="nav-item collapse">
+                            <?php
+                            if ($kolom[3]) {
+                                ?>
+                                <a class="nav link" href="transaksi_penjualan.php">Transaksi Penjualan</a>
+                            <?php
+                        } else { ?>
+                                <a class="nav link" href="#" onclick="forbidden()">Transaksi Penjualan</a>
+                            <?php
+                        } ?>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#trans" data-toggle="collapse"><span class="fa fa-sticky-note-o"></span> Laporan</a>
