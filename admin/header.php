@@ -28,6 +28,21 @@ $username = $_SESSION['username'];
             confirm("Apakah anda yakin ingin menghapus data ini ??")
         }
     </script>
+    <script>
+    function addrecord(i) {
+        
+        a = document.getElementById('ko' + i).innerHTML;
+        b = document.getElementById('na' + i).innerHTML;
+        c = document.getElementById('sa' + i).innerHTML;
+        d = document.getElementById('ha' + i).innerHTML;
+        
+        document.getElementById('kode').value = a;
+        document.getElementById('nama').value = b;
+        document.getElementById('satuan').value = c;
+        document.getElementById('harga').value = d;
+        
+    }
+</script>
     <title>Point of Sale</title>
 </head>
 
