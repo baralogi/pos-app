@@ -15,57 +15,74 @@ include 'header.php'
     <div class="card-body">
         <?php date_default_timezone_set("Asia/Bangkok"); ?>
         <form action="#" method="POST">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <input type="date" class="form-control" placeholder="Tangggal Transaksi" name="tgl" value="<?php echo date('Y-m-d') ?>">
+            <div class="card" style="margin-bottom: 1em;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="date" class="form-control" placeholder="Tangggal Transaksi" name="tgl" value="<?php echo date('Y-m-d') ?>">
+                            </div>
+                        </div>
+                        <div class="col-md-4 ml-auto">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Nama" name="nama">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Alamat" name="alamat">
+                            </div>
+                        </div>
+                        <div class="col-md-4 ml-auto">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="No. Telepon" name="tlp">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Keterangan" name="ket" rows="3"></textarea>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Alamat" name="alamat">
-                    </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">+</button>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" placeholder="Kode Barang" name="kode" id="kode">
+                </div>
+                <div class="col-auto">
+                    <input type="text" class="form-control" placeholder="Nama Barang" name="nama" id="nama">
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" placeholder="Satuan Barang" name="satuan" id="satuan">
+                </div>
+                <div class="col-auto">
+                    <input type="number" class="form-control" placeholder="Harga Barang" name="harga" id="harga">
+                </div>
+                <div class="col-md-1">
+                    <input type="number" class="form-control" placeholder="Jumlah Barang" name="jml" id="jml">
+                </div>
+                <div class="col-auto">
+                    <input type="submit" class="btn btn-success" value="Add">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-1">
-                    <div class="form-group">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            +
-                        </button>
-                    </div>
+            <div class="col-md-3 ml-auto" style="margin-top: 1em;">
+                <div class="form-group">
+                    <input type="number" class="form-control" placeholder="Total" name="total">
                 </div>
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Kode Barang" name="kode" id="kode">
-                    </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" placeholder="PPN" name="ppn">   
                 </div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nama Barang" name="nama" id="nama">
-                    </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" placeholder="Diskon" name="diskon">   
                 </div>
-                <div class="col-md-1">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Satuan Barang" name="satuan" id="satuan">
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Harga Barang" name="harga" id="harga">
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Jumlah Barang" name="jml" id="jml">
-                    </div>
-                </div>
-                <div class="col-md-1">
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-success" value="Add">
-                    </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" placeholder="Grand Total" name="gtot">   
                 </div>
             </div>
         </form>
@@ -111,7 +128,7 @@ include 'header.php'
                                 <td id=ko<?php echo $rec ?>><?php echo $data["kode_barang"]; ?></td>
                                 <td id=na<?php echo $rec ?>><?php echo $data["nama_barang"]; ?></td>
                                 <td id=sa<?php echo $rec ?>><?php echo $data["satuan"]; ?></td>
-                                <td id=ha<?php echo $rec ?>>Rp. <?php echo number_format($data["harga_jual"]); ?></td>
+                                <td id=ha<?php echo $rec ?>><?php echo $data["harga_jual"]; ?></td>
                                 <td>
                                     <button type="button" data-dismiss="modal" class="btn btn-success" onclick="addrecord(<?php echo $rec ?>)">Add</button>
                                 </td>
@@ -123,7 +140,7 @@ include 'header.php'
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <a href="barang-store.php"><button type="button" class="btn btn-primary">+ Tambah Barang</button></a>
             </div>
         </div>
     </div>
