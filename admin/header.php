@@ -37,7 +37,7 @@ $username = $_SESSION['username'];
         d = document.getElementById('ha' + i).innerHTML;
         
         document.getElementById('kode').value = a;
-        document.getElementById('nama').value = b;
+        document.getElementById('nama_barang').value = b;
         document.getElementById('satuan').value = c;
         document.getElementById('harga').value = d;
         

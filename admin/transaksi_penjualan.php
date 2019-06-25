@@ -13,14 +13,20 @@ include 'header.php'
 
 <div class="card">
     <div class="card-body">
-        <?php date_default_timezone_set("Asia/Bangkok"); ?>
-        <form action="#" method="POST">
-            <div class="card" style="margin-bottom: 1em;">
+        <?php
+        date_default_timezone_set('Asia/Bangkok');
+        $x = date('Ymd.hisms');
+
+        ?>
+        <form action="tambah_barang_penjualan.php" method="POST">
+            <div class="card" style="margin-bottom: 2em;">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <input type="date" class="form-control" placeholder="Tangggal Transaksi" name="tgl" value="<?php echo date('Y-m-d') ?>">
+                                <input type="hidden" name="kodetgl" value="<?php echo 'tr' . $x; ?>">
+                                <input type="date" class="form-control" placeholder="Tangggal Transaksi" name="asc" value="<?php echo date('Y-m-d') ?>" disabled>
+                                <input type="hidden" name="tgl" value="<?php echo date('Y-m-d') ?>">
                             </div>
                         </div>
                         <div class="col-md-4 ml-auto">
@@ -56,36 +62,80 @@ include 'header.php'
                     <input type="text" class="form-control" placeholder="Kode Barang" name="kode" id="kode">
                 </div>
                 <div class="col-auto">
-                    <input type="text" class="form-control" placeholder="Nama Barang" name="nama" id="nama">
+                    <input type="text" class="form-control" placeholder="Nama Barang" name="nama_barang" id="nama_barang">
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-1">
                     <input type="text" class="form-control" placeholder="Satuan Barang" name="satuan" id="satuan">
                 </div>
                 <div class="col-auto">
                     <input type="number" class="form-control" placeholder="Harga Barang" name="harga" id="harga">
                 </div>
-                <div class="col-md-1">
-                    <input type="number" class="form-control" placeholder="Jumlah Barang" name="jml" id="jml">
+                <div class="col-md-2">
+                    <input type="number" class="form-control" placeholder="Jumlah Barang" name="jml" id="jml" required>
                 </div>
                 <div class="col-auto">
                     <input type="submit" class="btn btn-success" value="Add">
                 </div>
             </div>
+            <table class="table table-sm table-bordered table-hover" style="margin-top: 1em; text-align:center;">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Kode Barang</th>
+                        <th>Nama Barang</th>
+                        <th>Satuan Barang</th>
+                        <th>Harga Barang</th>
+                        <th>Jumlah</th>
+                        <th>Subtotal</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $query = "SELECT * FROM detail_penjualan";
+                    $row = mysqli_query($conn, $query);
+                    ?>
+
+                    <?php
+                    $no = 1;
+                    $rec = 1;
+                    while ($data = mysqli_fetch_assoc($row)) {
+                        ?>
+                        <tr>
+                            <td><?php echo $no ?></td>
+                            <td><?php echo $data["kode_barang"]; ?></td>
+                            <td><?php echo $data["nama_barang"]; ?></td>
+                            <td><?php echo $data["satuan_barang"]; ?></td>
+                            <td><?php echo $data["harga_jual"]; ?></td>
+                            <td><?php echo $data["jml_barang"]; ?></td>
+                            <td><?php echo $data["total"]; ?></td>
+                            <td>
+                                <a href="hapus_barang_penjualan.php?id=<?php echo $data['kode_tr']; ?>" onclick="deleted()"><button type="button" class="btn btn-danger btn-sm" title="Delete"><span class="fa fa-trash"></span></button></a>
+                            </td>
+                        </tr>
+                        <?php
+                        $no++;
+                        $rec++;
+                    } ?>
+                </tbody>
+            </table>
             <div class="col-md-3 ml-auto" style="margin-top: 1em;">
                 <div class="form-group">
                     <input type="number" class="form-control" placeholder="Total" name="total">
                 </div>
                 <div class="form-group">
-                    <input type="number" class="form-control" placeholder="PPN" name="ppn">   
+                    <input type="number" class="form-control" placeholder="PPN" name="ppn">
                 </div>
                 <div class="form-group">
-                    <input type="number" class="form-control" placeholder="Diskon" name="diskon">   
+                    <input type="number" class="form-control" placeholder="Diskon" name="diskon">
                 </div>
                 <div class="form-group">
-                    <input type="number" class="form-control" placeholder="Grand Total" name="gtot">   
+                    <input type="number" class="form-control" placeholder="Grand Total" name="gtot">
                 </div>
             </div>
         </form>
+
+
     </div>
 </div>
 
@@ -133,7 +183,9 @@ include 'header.php'
                                     <button type="button" data-dismiss="modal" class="btn btn-success" onclick="addrecord(<?php echo $rec ?>)">Add</button>
                                 </td>
                             </tr>
-                            <?php $no++;
+                            <?php
+                            $no++;
+                            $rec++;
                         } ?>
                     </tbody>
                 </table>
