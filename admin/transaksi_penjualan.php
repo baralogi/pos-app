@@ -18,7 +18,7 @@ include 'header.php'
         $x = date('Ymd.hisms');
 
         ?>
-        <form action="tambah_barang_penjualan.php" method="POST">
+        <form action="transaksi.php" method="POST">
             <div class="card" style="margin-bottom: 2em;">
                 <div class="card-body">
                     <div class="row">
@@ -71,26 +71,38 @@ include 'header.php'
                     <input type="number" class="form-control" placeholder="Harga Barang" name="harga" id="harga">
                 </div>
                 <div class="col-md-2">
-                    <input type="number" class="form-control" placeholder="Jumlah Barang" name="jml" id="jml" required>
+                    <input type="number" class="form-control" placeholder="Jumlah Barang" name="jml" id="jml">
                 </div>
                 <div class="col-auto">
-                    <input type="submit" class="btn btn-success" value="Add">
+                    <button type="button" class="btn btn-success" onclick="addBarang()">Add</button>
                 </div>
             </div>
-            <table class="table table-sm table-bordered table-hover" style="margin-top: 1em; text-align:center;">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Kode Barang</th>
-                        <th>Nama Barang</th>
-                        <th>Satuan Barang</th>
-                        <th>Harga Barang</th>
-                        <th>Jumlah</th>
-                        <th>Subtotal</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <div id="isi">
+                <table class="table table-sm table-bordered table-hover" style="margin-top: 1em; text-align:center;">
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Kode</th>
+                            <th>Nama</th>
+                            <th>Satuan</th>
+                            <th>Harga</th>
+                            <th>Jumlah</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th> - </th>
+                            <th> - </th>
+                            <th> - </th>
+                            <th> - </th>
+                            <th> - </th>
+                            <th> - </th>
+                            <th> - </th>
+                        </tr>
+                    </tbody>
+
+                    <!-- <tbody>
                     <?php
                     $query = "SELECT * FROM detail_penjualan";
                     $row = mysqli_query($conn, $query);
@@ -101,46 +113,86 @@ include 'header.php'
                     $rec = 1;
                     while ($data = mysqli_fetch_assoc($row)) {
                         ?>
-                        <tr>
-                            <td><?php echo $no ?></td>
-                            <td><?php echo $data["kode_barang"]; ?></td>
-                            <td><?php echo $data["nama_barang"]; ?></td>
-                            <td><?php echo $data["satuan_barang"]; ?></td>
-                            <td><?php echo $data["harga_jual"]; ?></td>
-                            <td><?php echo $data["jml_barang"]; ?></td>
-                            <td><?php echo $data["total"]; ?></td>
-                            <td>
-                                <a href="hapus_barang_penjualan.php?id=<?php echo $data['kode_tr']; ?>" onclick="deleted()"><button type="button" class="btn btn-danger btn-sm" title="Delete"><span class="fa fa-trash"></span></button></a>
-                            </td>
-                        </tr>
-                        <?php
-                        $no++;
-                        $rec++;
-                    } ?>
-                </tbody>
-            </table>
-            <div class="col-md-3 ml-auto" style="margin-top: 1em;">
-                <div class="form-group">
-                    <input type="number" class="form-control" placeholder="Total" name="total">
-                </div>
-                <div class="form-group">
-                    <input type="number" class="form-control" placeholder="PPN" name="ppn">
-                </div>
-                <div class="form-group">
-                    <input type="number" class="form-control" placeholder="Diskon" name="diskon">
-                </div>
-                <div class="form-group">
-                    <input type="number" class="form-control" placeholder="Grand Total" name="gtot">
+                                            <tr>
+                                                <td><?php echo $no ?></td>
+                                                <td><?php echo $data["kode_barang"]; ?></td>
+                                                <td><?php echo $data["nama_barang"]; ?></td>
+                                                <td><?php echo $data["satuan_barang"]; ?></td>
+                                                <td><?php echo $data["harga_jual"]; ?></td>
+                                                <td><?php echo $data["jml_barang"]; ?></td>
+                                                <td><?php echo $data["total"]; ?></td>
+                                                <td>
+                                                    <a href="hapus_barang_penjualan.php?id=<?php echo $data['kode_tr']; ?>" onclick="deleted()"><button type="button" class="btn btn-danger btn-sm" title="Delete"><span class="fa fa-trash"></span></button></a>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                            $no++;
+                                            $rec++;
+                                        } ?>
+                </tbody> -->
+
+                </table>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-md-4 ml-auto" style="margin-top: 1em;">
+                        <div class="form-group">
+                            <label for="total">Total</label>
+                            <input type="number" class="form-control" name="total" id="total" data-a-sign="Rp." data-a-dec="," data-a-sep="." readonly>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="ppn">PPN (%)</label>
+                                    <input type="number" class="form-control" name="ppn" id="ppn" onchange="myppn()">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="diskon">Diskon (%)</label>
+                                    <input type="number" class="form-control" name="diskon" id="diskon" onchange="mydiskon()">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="card" style="margin-top: 1em;">
+                <div class="card-body">
+                    <div class="col-md-4 ml-auto" style="margin-top: 1em;">
+                        <div class="form-group">
+                            <label for="grandtotal">Grand Total</label>
+                            <input type="number" class="form-control" name="gtot" id="grandtotal" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="bayar">Bayar</label>
+                            <input type="number" class="form-control" name="bayar" id="bayar" onclick="mybayar()">
+                        </div>
+                        <div class="form-group">
+                            <label for="kembali">Kembalian</label>
+                            <input type="number" class="form-control" name="kembali" id="kembalian" readonly>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <input type="submit" class="form-control btn btn-primary" id="save" name="save" value="Save">
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <input type="text" class="form-control" id="isitabel1" name="isitabel1" value="-" readonly hidden> 
+            <input type="text" class="form-control" id="isitabel2" name="isitabel2" value="-" readonly hidden>
+            <input type="text" class="form-control" id="isitabel3" name="isitabel3" value="-" readonly hidden>
+            <input type="text" class="form-control" id="isitabel4" name="isitabel4" value="-" readonly hidden>
+            <input type="text" class="form-control" id="isitabel5" name="isitabel5" value="-" readonly hidden>
+            <input type="text" class="form-control" id="isitabel6" name="isitabel6" value="-" readonly hidden>
         </form>
-
-
     </div>
 </div>
 
 <!-- modal -->
-
 <div class="modal fade bd-example-modal-xl" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
@@ -197,6 +249,7 @@ include 'header.php'
         </div>
     </div>
 </div>
+<!-- modal -->
 
 
 

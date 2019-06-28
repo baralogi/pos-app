@@ -16,33 +16,7 @@ $username = $_SESSION['username'];
     <link rel="stylesheet" href="../assets/global/css/bootstrap.css">
     <script src="../assets/global/js/jquery-3.4.1.js"></script>
     <script src="../assets/global/js/popper.min.js"></script>
-    <script src="../assets/global/js/bootstrap.min.js"></script>
-    <script>
-        function forbidden() {
-            alert("Anda tidak bisa mengakses halaman ini!");
-        }
-        function logout() {
-            confirm("Apakah anda yakin ingin keluar??");
-        }
-        function deleted() {
-            confirm("Apakah anda yakin ingin menghapus data ini ??")
-        }
-    </script>
-    <script>
-    function addrecord(i) {
-        
-        a = document.getElementById('ko' + i).innerHTML;
-        b = document.getElementById('na' + i).innerHTML;
-        c = document.getElementById('sa' + i).innerHTML;
-        d = document.getElementById('ha' + i).innerHTML;
-        
-        document.getElementById('kode').value = a;
-        document.getElementById('nama_barang').value = b;
-        document.getElementById('satuan').value = c;
-        document.getElementById('harga').value = d;
-        
-    }
-</script>
+    <script src="../assets/global/js/bootstrap.min.js"></script> 
     <title>Point of Sale</title>
 </head>
 
