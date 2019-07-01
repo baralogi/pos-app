@@ -52,10 +52,10 @@
         dataju.splice(x, 1);
         datato.splice(x, 1);
 
-        var x;
+        var x="";
         var i;
         for (i = 0; i < datako.length; i++) {
-            x += "<tr><td><button type=\"Button\" class=\"btn btn-danger\" data-dismiss=\"modal\" onclick=\"deleteBarang(" + i + ")\"><span class=\"fa fa-trash\"></span></button></td><td>" + datako[i] + "</td><td>" + datana[i] + "</td><td>" + datasa[i] + "</td><td>" + dataha[i] + "</td><td>" + data[ju] + "</td><td>" + datato[i] + "</td></tr>";
+            x += "<tr><td><button type=\"Button\" class=\"btn btn-danger\" data-dismiss=\"modal\" onclick=\"deleteBarang(" + i + ")\"><span class=\"fa fa-trash\"></span></button></td><td>" + datako[i] + "</td><td>" + datana[i] + "</td><td>" + datasa[i] + "</td><td>" + dataha[i] + "</td><td>" + dataju[i] + "</td><td>" + datato[i] + "</td></tr>";
         }
 
         document.getElementById("isi").innerHTML = "<table class=\"table table-hover table-sm table-bordered\" style=\"margin-top: 1em; text-align:center;\"><thead>" + "<tr><th>Action</th><th>Kode</th><th>Nama</th><th>Satuan</th><th>Jumlah</th><th>Harga Jual</th><th>Total</th></tr>" + "</thead><tbody>" + x + "</tbody></table>";
@@ -101,7 +101,7 @@
 
         var kembalinya;
         kembalinya = Number(bayar) - hasil;
-        document.getElementById('kembalian').value = kembalian;
+        document.getElementById('kembalian').value = kembalinya;
     }
 
     function addBarang() {

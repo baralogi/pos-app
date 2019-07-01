@@ -19,8 +19,8 @@ include 'header.php'
 
         ?>
         <form action="transaksi.php" method="POST">
-            <div class="card" style="margin-bottom: 2em;">
-                <div class="card-body">
+            <div class="" style="margin-bottom: 1em;">
+                <div class="">
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
@@ -48,7 +48,7 @@ include 'header.php'
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <textarea class="form-control" placeholder="Keterangan" name="ket" rows="3"></textarea>
+                                <input type="text" class="form-control" placeholder="Keterangan" name="ket">
                             </div>
                         </div>
                     </div>
@@ -113,22 +113,22 @@ include 'header.php'
                     $rec = 1;
                     while ($data = mysqli_fetch_assoc($row)) {
                         ?>
-                                            <tr>
-                                                <td><?php echo $no ?></td>
-                                                <td><?php echo $data["kode_barang"]; ?></td>
-                                                <td><?php echo $data["nama_barang"]; ?></td>
-                                                <td><?php echo $data["satuan_barang"]; ?></td>
-                                                <td><?php echo $data["harga_jual"]; ?></td>
-                                                <td><?php echo $data["jml_barang"]; ?></td>
-                                                <td><?php echo $data["total"]; ?></td>
-                                                <td>
-                                                    <a href="hapus_barang_penjualan.php?id=<?php echo $data['kode_tr']; ?>" onclick="deleted()"><button type="button" class="btn btn-danger btn-sm" title="Delete"><span class="fa fa-trash"></span></button></a>
-                                                </td>
-                                            </tr>
-                                            <?php
-                                            $no++;
-                                            $rec++;
-                                        } ?>
+                                                <tr>
+                                                    <td><?php echo $no ?></td>
+                                                    <td><?php echo $data["kode_barang"]; ?></td>
+                                                    <td><?php echo $data["nama_barang"]; ?></td>
+                                                    <td><?php echo $data["satuan_barang"]; ?></td>
+                                                    <td><?php echo $data["harga_jual"]; ?></td>
+                                                    <td><?php echo $data["jml_barang"]; ?></td>
+                                                    <td><?php echo $data["total"]; ?></td>
+                                                    <td>
+                                                        <a href="hapus_barang_penjualan.php?id=<?php echo $data['kode_tr']; ?>" onclick="deleted()"><button type="button" class="btn btn-danger btn-sm" title="Delete"><span class="fa fa-trash"></span></button></a>
+                                                    </td>
+                                                </tr>
+                                                <?php
+                                                $no++;
+                                                $rec++;
+                                            } ?>
                 </tbody> -->
 
                 </table>
@@ -166,11 +166,11 @@ include 'header.php'
                         </div>
                         <div class="form-group">
                             <label for="bayar">Bayar</label>
-                            <input type="number" class="form-control" name="bayar" id="bayar" onclick="mybayar()">
+                            <input type="number" class="form-control" name="bayar" id="bayar" onchange="mybayar()">
                         </div>
                         <div class="form-group">
                             <label for="kembali">Kembalian</label>
-                            <input type="number" class="form-control" name="kembali" id="kembalian" readonly>
+                            <input type="number" class="form-control" name="kembalian" id="kembalian" readonly>
                         </div>
                         <div class="form-group">
                             <div class="form-group">
@@ -182,7 +182,7 @@ include 'header.php'
                     </div>
                 </div>
             </div>
-            <input type="text" class="form-control" id="isitabel1" name="isitabel1" value="-" readonly hidden> 
+            <input type="text" class="form-control" id="isitabel1" name="isitabel1" value="-" readonly hidden>
             <input type="text" class="form-control" id="isitabel2" name="isitabel2" value="-" readonly hidden>
             <input type="text" class="form-control" id="isitabel3" name="isitabel3" value="-" readonly hidden>
             <input type="text" class="form-control" id="isitabel4" name="isitabel4" value="-" readonly hidden>
@@ -203,7 +203,7 @@ include 'header.php'
                 </button>
             </div>
             <div class="modal-body">
-                <table class="table table-hover" id="mytable">
+                <table class="table table-hover table-sm table-bordered" id="mytable">
                     <thead>
                         <tr>
                             <th>No</th>
