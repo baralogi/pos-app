@@ -19,44 +19,42 @@ include 'header.php'
 
         ?>
         <form action="transaksi.php" method="POST">
-            <div class="" style="margin-bottom: 1em;">
-                <div class="">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <input type="hidden" name="kodetgl" value="<?php echo 'tr' . $x; ?>">
-                                <input type="date" class="form-control" placeholder="Tangggal Transaksi" name="asc" value="<?php echo date('Y-m-d') ?>" disabled>
-                                <input type="hidden" name="tgl" value="<?php echo date('Y-m-d') ?>">
-                            </div>
-                        </div>
-                        <div class="col-md-4 ml-auto">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nama" name="nama">
-                            </div>
+            <div style="margin-bottom: 1em;">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <input type="hidden" name="kodetgl" value="<?php echo 'tr' . $x; ?>">
+                            <input type="date" class="form-control" placeholder="Tangggal Transaksi" name="asc" value="<?php echo date('Y-m-d') ?>" readonly>
+                            <input type="hidden" name="tgl" value="<?php echo date('Y-m-d') ?>">
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Alamat" name="alamat">
-                            </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nama" name="nama">
                         </div>
-                        <div class="col-md-4 ml-auto">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="No. Telepon" name="tlp">
-                            </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="No. Telepon" name="tlp">
                         </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Keterangan" name="ket">
-                            </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Alamat" name="alamat">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Keterangan" name="ket">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-auto">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">+</button>
+                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">+</button>
                 </div>
                 <div class="col-md-2">
                     <input type="text" class="form-control" placeholder="Kode Barang" name="kode" id="kode">
@@ -101,84 +99,56 @@ include 'header.php'
                             <th> - </th>
                         </tr>
                     </tbody>
-
-                    <!-- <tbody>
-                    <?php
-                    $query = "SELECT * FROM detail_penjualan";
-                    $row = mysqli_query($conn, $query);
-                    ?>
-
-                    <?php
-                    $no = 1;
-                    $rec = 1;
-                    while ($data = mysqli_fetch_assoc($row)) {
-                        ?>
-                                                <tr>
-                                                    <td><?php echo $no ?></td>
-                                                    <td><?php echo $data["kode_barang"]; ?></td>
-                                                    <td><?php echo $data["nama_barang"]; ?></td>
-                                                    <td><?php echo $data["satuan_barang"]; ?></td>
-                                                    <td><?php echo $data["harga_jual"]; ?></td>
-                                                    <td><?php echo $data["jml_barang"]; ?></td>
-                                                    <td><?php echo $data["total"]; ?></td>
-                                                    <td>
-                                                        <a href="hapus_barang_penjualan.php?id=<?php echo $data['kode_tr']; ?>" onclick="deleted()"><button type="button" class="btn btn-danger btn-sm" title="Delete"><span class="fa fa-trash"></span></button></a>
-                                                    </td>
-                                                </tr>
-                                                <?php
-                                                $no++;
-                                                $rec++;
-                                            } ?>
-                </tbody> -->
-
                 </table>
             </div>
             <div class="card">
                 <div class="card-body">
-                    <div class="col-md-4 ml-auto" style="margin-top: 1em;">
-                        <div class="form-group">
-                            <label for="total">Total</label>
-                            <input type="number" class="form-control" name="total" id="total" data-a-sign="Rp." data-a-dec="," data-a-sep="." readonly>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="ppn">PPN (%)</label>
-                                    <input type="number" class="form-control" name="ppn" id="ppn" onchange="myppn()">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="diskon">Diskon (%)</label>
-                                    <input type="number" class="form-control" name="diskon" id="diskon" onchange="mydiskon()">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card" style="margin-top: 1em;">
-                <div class="card-body">
-                    <div class="col-md-4 ml-auto" style="margin-top: 1em;">
-                        <div class="form-group">
-                            <label for="grandtotal">Grand Total</label>
-                            <input type="number" class="form-control" name="gtot" id="grandtotal" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="bayar">Bayar</label>
-                            <input type="number" class="form-control" name="bayar" id="bayar" onchange="mybayar()">
-                        </div>
-                        <div class="form-group">
-                            <label for="kembali">Kembalian</label>
-                            <input type="number" class="form-control" name="kembalian" id="kembalian" readonly>
-                        </div>
-                        <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
                             <div class="form-group">
-                                <input type="submit" class="form-control btn btn-primary" id="save" name="save" value="Save">
+                                <label for="total">Total</label>
+                                <input type="number" class="form-control" name="total" id="total" data-a-sign="Rp." data-a-dec="," data-a-sep="." readonly>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="ppn">PPN (%)</label>
+                                        <input type="number" class="form-control" name="ppn" id="ppn" onchange="myppn()">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="diskon">Diskon (%)</label>
+                                        <input type="number" class="form-control" name="diskon" id="diskon" onchange="mydiskon()">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-
+                        <div class="col-md-4 ml-auto">
+                            <div class="form-group">
+                                <label for="grandtotal">Grand Total</label>
+                                <input type="number" class="form-control" name="gtot" id="grandtotal" readonly>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="bayar">Bayar</label>
+                                        <input type="number" class="form-control" name="bayar" id="bayar" onchange="mybayar()">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="kembali">Kembalian</label>
+                                        <input type="number" class="form-control" name="kembalian" id="kembalian" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <input type="submit" class="form-control btn btn-primary" id="save" name="save" value="Buy">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
