@@ -102,10 +102,19 @@ $username = $_SESSION['username'];
                                 <a class="nav link" href="#" onclick="forbidden()">Transaksi Penjualan</a>
                             <?php
                         } ?>
+                             <?php
+                            if ($kolom[4]) {
+                                ?>
+                                <a class="nav link" href="transaksi_pembelian.php">Transaksi Pembelian</a>
+                            <?php
+                        } else { ?>
+                                <a class="nav link" href="#" onclick="forbidden()">Transaksi Pembelian</a>
+                            <?php
+                        } ?>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#trans" data-toggle="collapse"><span class="fa fa-sticky-note-o"></span> Laporan</a>
+                        <a class="nav-link" href="#tran" data-toggle="collapse"><span class="fa fa-sticky-note-o"></span> Laporan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php" onclick="logout()"><span class="fa fa-sign-out"></span> Log Out</a>
