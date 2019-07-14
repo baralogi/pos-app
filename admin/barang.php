@@ -48,7 +48,6 @@ $row = mysqli_query($conn, $query);
                         <a href="barang-delete.php?kode_barang=<?php echo $data['kode_barang']; ?>" onclick="deleted()"><button type="button" class="btn btn-danger btn-sm" title="Delete"><span class="fa fa-trash"></span></button></a>
                         <a href="barang-detail.php?kode_barang=<?php echo $data['kode_barang']; ?>"><button type="button" class="btn btn-info btn-sm" title="Detail"><span class="fa fa-info-circle"></span></button></a>
                     </td>
-                    </td>
                 </tr>
                 <?php $no++;
             } ?>
