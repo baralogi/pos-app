@@ -52,7 +52,7 @@
         dataju.splice(x, 1);
         datato.splice(x, 1);
 
-        var x="";
+        var x = "";
         var i;
         for (i = 0; i < datako.length; i++) {
             x += "<tr><td><button type=\"Button\" class=\"btn btn-danger\" data-dismiss=\"modal\" onclick=\"deleteBarang(" + i + ")\"><span class=\"fa fa-trash\"></span></button></td><td>" + datako[i] + "</td><td>" + datana[i] + "</td><td>" + datasa[i] + "</td><td>" + dataha[i] + "</td><td>" + dataju[i] + "</td><td>" + datato[i] + "</td></tr>";
@@ -120,7 +120,7 @@
 
             datato[jum] = Number(document.getElementById('harga').value) * Number(document.getElementById('jml').value);
 
-            var x="";
+            var x = "";
             var i;
             var total;
             total = 0;
@@ -157,6 +157,39 @@
             window.alert("Ada element yang kosong");
         }
     }
+
+    var supp=document.getElementById("supp");
+    var nama=document.getElementById("nm");
+
+
+    $(document).ready(function () {
+        $('#sup123').change(function(){
+            var valSelect = $(this).val()
+            var ajax1 = new XMLHttpRequest();
+            var ajax2 = new XMLHttpRequest();
+            var ajax3 = new XMLHttpRequest();
+            var ajax4 = new XMLHttpRequest();
+
+
+            ajax1.onreadystatechange = function(){
+                document.getElementById("nm").value = ajax1.responseText;
+                console.log(valSelect);
+            }
+
+            ajax2.onreadystatechange = function(){
+                document.getElementById("alm").value = ajax2.responseText;
+                console.log(valSelect);
+            }
+
+            ajax1.open('GET', 'supplier-cuk.php?sup123='+valSelect, true);
+            ajax1.send();
+
+            ajax2.open('GET', 'supplier-cuk.php?sup1234='+valSelect, true);
+            ajax2.send();
+            
+        })        
+    })
+
 </script>
 
 </html>

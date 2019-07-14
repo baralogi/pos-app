@@ -1,5 +1,6 @@
 <?php
-include 'header.php'
+include 'header.php';
+
 ?>
 
 
@@ -37,14 +38,14 @@ include 'header.php'
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Nama" name="nama">
+                            <input type="text" class="form-control" placeholder="Nama" name="nama" id="nm">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
-                            <select class="form-control" name="kategori">
+                            <select class="form-control" name="kategori" id="sup123" >
                                 <option value="" selected="selected">Pilih Supplier</option>
                                 <?php
                                 // query untuk menampilkan semua kategori dari tabel 
@@ -80,7 +81,7 @@ include 'header.php'
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Keterangan" name="ket">
+                            <input type="text" class="form-control" placeholder="Alamat" name="alm" id="alm">
                         </div>
                     </div>
                 </div>
