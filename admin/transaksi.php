@@ -53,27 +53,27 @@
     echo $a;
     echo"</br>";
 
-    $array1 = explode(",",$_POST['isitabel1']);
+    $array1 = implode(",",$_POST['isitabel1']);
     print_r($array1);
     echo "<br>";
 
-    $array2 = explode(",",$_POST['isitabel2']);
+    $array2 = implode(",",$_POST['isitabel2']);
     print_r($array2);
     echo "<br>";
 
-    $array3 = explode(",",$_POST['isitabel3']);
+    $array3 = implode(",",$_POST['isitabel3']);
     print_r($array3);
     echo "<br>";
 
-    $array4 = explode(",",$_POST['isitabel4']);
+    $array4 = implode(",",$_POST['isitabel4']);
     print_r($array4);
     echo "<br>";
 
-    $array5 = explode(",",$_POST['isitabel5']);
+    $array5 = implode(",",$_POST['isitabel5']);
     print_r($array5);
     echo "<br>";
 
-    $array6 = explode(",",$_POST['isitabel6']);
+    $array6 = implode(",",$_POST['isitabel6']);
     print_r($array6);
     echo "<br>";
 

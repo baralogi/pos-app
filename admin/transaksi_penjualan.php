@@ -18,12 +18,12 @@ include 'header.php'
         $x = date('Ymd.hisms');
 
         ?>
-        <form action="transaksi.php" method="POST">
+        <form action="tr_penjualan-proses.php" method="POST">
             <div style="margin-bottom: 1em;">
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
-                            <input type="hidden" name="kodetgl" value="<?php echo 'tr' . $x; ?>">
+                            <input type="hidden" name="kode_tr" value="<?php echo 'tr' . $x; ?>">
                             <input type="date" class="form-control" placeholder="Tangggal Transaksi" name="asc" value="<?php echo date('Y-m-d') ?>" readonly>
                             <input type="hidden" name="tgl" value="<?php echo date('Y-m-d') ?>">
                         </div>
@@ -113,13 +113,13 @@ include 'header.php'
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="ppn">PPN (%)</label>
-                                        <input type="number" class="form-control" name="ppn" id="ppn" onchange="myppn()">
+                                        <input type="number" class="form-control" name="ppn" id="ppn" value="0" onchange="myppn()">
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="diskon">Diskon (%)</label>
-                                        <input type="number" class="form-control" name="diskon" id="diskon" onchange="mydiskon()">
+                                        <input type="number" class="form-control" name="diskon" id="diskon" value="0" onchange="mydiskon()">
                                     </div>
                                 </div>
                             </div>
@@ -127,7 +127,7 @@ include 'header.php'
                         <div class="col-md-4 ml-auto">
                             <div class="form-group">
                                 <label for="grandtotal">Grand Total</label>
-                                <input type="number" class="form-control" name="gtot" id="grandtotal" readonly>
+                                <input type="number" class="form-control" name="g_total" id="grandtotal" readonly>
                             </div>
                             <div class="row">
                                 <div class="col">
