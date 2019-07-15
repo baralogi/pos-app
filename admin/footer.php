@@ -2,6 +2,9 @@
 </div>
 </div>
 </body>
+<script src="../assets/global/js/jquery-3.4.1.js"></script>
+<script src="../assets/global/js/popper.min.js"></script>
+<script src="../assets/global/js/bootstrap.min.js"></script>
 <script>
     var datako = [];
     var datana = [];
@@ -158,38 +161,28 @@
         }
     }
 
-    var supp=document.getElementById("supp");
-    var nama=document.getElementById("nm");
+    
 
-
-    $(document).ready(function () {
-        $('#sup123').change(function(){
+    $(document).ready(function() {
+        $('#sup123').change(function() {
             var valSelect = $(this).val()
-            var ajax1 = new XMLHttpRequest();
-            var ajax2 = new XMLHttpRequest();
-            var ajax3 = new XMLHttpRequest();
-            var ajax4 = new XMLHttpRequest();
-
-
-            ajax1.onreadystatechange = function(){
-                document.getElementById("nm").value = ajax1.responseText;
-                console.log(valSelect);
-            }
-
-            ajax2.onreadystatechange = function(){
-                document.getElementById("alm").value = ajax2.responseText;
-                console.log(valSelect);
-            }
-
-            ajax1.open('GET', 'supplier-cuk.php?sup123='+valSelect, true);
-            ajax1.send();
-
-            ajax2.open('GET', 'supplier-cuk.php?sup1234='+valSelect, true);
-            ajax2.send();
+            $.ajax({
+                type: "POST",
+                url: "supplier-cuk.php?id="+valSelect,
+                data: "id=valSelect",
+                dataType: "json",
+                cache: false,
+                success: function(response) {
             
-        })        
-    })
-
+                    document.getElementById("nm").value = response["nama_supplier"];
+                    document.getElementById("alm").value = response["alamat"];
+                    document.getElementById("tlp").value = response["no_hp"];
+                    document.getElementById("email").value = response["email"];
+                  
+                }
+            });
+        });
+    });
 </script>
 
 </html>

@@ -14,9 +14,7 @@ $username = $_SESSION['username'];
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/global/css/bootstrap.css">
-    <script src="../assets/global/js/jquery-3.4.1.js"></script>
-    <script src="../assets/global/js/popper.min.js"></script>
-    <script src="../assets/global/js/bootstrap.min.js"></script> 
+     
     <title>Point of Sale</title>
 </head>
 

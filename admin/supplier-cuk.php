@@ -1,22 +1,15 @@
 <?php
 include "config.php";
 
-if (isset($_GET['sup123'])) {
-    $cuk = $_GET["sup123"];
+
+    $cuk = $_GET["id"];
 
     $query = "SELECT * FROM supplier WHERE kode_supplier='$cuk'";
     $row = mysqli_query($conn, $query);
     while ($data = mysqli_fetch_assoc($row)) {
-        echo $data['nama_supplier'];
+       echo json_encode($data);
     }
-}
+    // $array = array(1,2,3,4,5,6);
+    // echo json_encode($array);
 
-if (isset($_GET['sup1234'])) {
-    $cuk = $_GET["sup1234"];
-
-    $query = "SELECT * FROM supplier WHERE kode_supplier='$cuk'";
-    $row = mysqli_query($conn, $query);
-    while ($data = mysqli_fetch_assoc($row)) {
-        echo $data['alamat'];
-    }
-}
+?>

@@ -62,12 +62,12 @@ include 'header.php';
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Telepon" name="tlp">
+                            <input type="text" class="form-control" placeholder="Telepon" name="tlp" id="tlp">
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Email" name="email">
+                            <input type="text" class="form-control" placeholder="Email" name="email" id="email">
                         </div>
                     </div>
                 </div>
