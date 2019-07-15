@@ -26,7 +26,11 @@
     }
 
     function logout() {
-        confirm("Apakah anda yakin ingin keluar??");
+        var txt;
+        txt = confirm("Apakah anda yakin ingin keluar??");
+        if(txt==true){
+            location.href = "logout.php"
+        }
     }
 
     function deleted() {
