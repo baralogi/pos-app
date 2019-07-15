@@ -53,6 +53,20 @@ while ($data = mysqli_fetch_assoc($row)) {
                     <div class="col">
                         <input type="number" class="form-control" placeholder="Stok Barang" name="stok" value="<?php echo $data['stok']; ?>" required>
                     </div>
+                    <div class="col">
+                        <select class="form-control" name="sup">
+                            <?php
+                            // query untuk menampilkan semua kategori dari tabel 
+                            $query1 = "SELECT * FROM supplier";
+                            $hasil1 = mysqli_query($conn, $query1);
+                            while ($data1 = mysqli_fetch_assoc($hasil1)) {
+                                $selected = ($data['kode_supplier'] == $data1['kode_supplier'] ? 'selected="selected"' : '');
+                                echo '<option value ="' . $data1['kode_supplier'] . '" '. $selected .'>' . $data1['nama_perusahaan'] . '</option>';
+                                
+                            }
+                            ?>
+                        </select>
+                    </div>
                 </div>
                 <div class="form-group">
                     <input type="number" class="form-control" placeholder="Harga Beli" name="hbeli" value="<?php echo $data['harga_beli']; ?>" required>

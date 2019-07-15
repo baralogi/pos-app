@@ -30,7 +30,7 @@ $row = mysqli_query($conn, $query);
                 <th>Nama Supplier</th>
                 <th>Nama Perusahaan</th>
                 <th>Kota</th>
-                <th>Email</th>
+                <th>Keterangan</th>
                 <th>Action</th>
             </thead>
             <?php
