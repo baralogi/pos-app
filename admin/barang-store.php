@@ -53,6 +53,19 @@ include 'header.php';
                 <div class="col">
                     <input type="number" class="form-control" placeholder="Stok Barang" name="stok" required>
                 </div>
+                <div class="col">
+                    <select class="form-control" name="sup">
+                        <option value="" selected="selected">Pilih Supplier</option>
+                        <?php
+                        // query untuk menampilkan semua supplier dari tabel 
+                        $query = "SELECT * FROM supplier";
+                        $hasil = mysqli_query($conn, $query);
+                        while ($data = mysqli_fetch_array($hasil)) {
+                            echo "<option value='" . $data['kode_supplier'] . "'>" . $data['nama_perusahaan'] . "</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
             </div>
             <div class="form-group">
                 <input type="number" class="form-control" placeholder="Harga Beli" name="hbeli" required>

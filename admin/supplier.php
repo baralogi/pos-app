@@ -30,7 +30,7 @@ $row = mysqli_query($conn, $query);
                 <th>Nama Supplier</th>
                 <th>Nama Perusahaan</th>
                 <th>Kota</th>
-                <th>Email</th>
+                <th>Keterangan</th>
                 <th>Action</th>
             </thead>
             <?php
@@ -43,7 +43,7 @@ $row = mysqli_query($conn, $query);
                     <td><?php echo $data["nama_supplier"]; ?></td>
                     <td><?php echo $data["nama_perusahaan"]; ?></td>
                     <td><?php echo $data["kota"]; ?></td>
-                    <td><?php echo $data["email"]; ?></td>
+                    <td><?php echo $data["keterangan"]; ?></td>
                     <td>
                         <a href="supplier-update.php?id=<?php echo $data['kode_supplier']; ?>"><button type="button" class="btn btn-primary btn-sm" title="Edit"><span class="fa fa-pencil"></span></button></a>
                         <a href="supplier-delete.php?id=<?php echo $data['kode_supplier']; ?>" onclick="deleted()"><button type="button" class="btn btn-danger btn-sm" title="Delete"><span class="fa fa-trash"></span></button></a>

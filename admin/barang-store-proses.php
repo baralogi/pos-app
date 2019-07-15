@@ -8,8 +8,9 @@ $satuan = $_POST['satuan'];
 $stok = $_POST['stok'];
 $hbeli = $_POST['hbeli'];
 $hjual = $_POST['hjual'];
+$sup = $_POST['sup'];
 
-$query = "INSERT INTO barang VALUES('$kode', '$kategori', '$nama', '$satuan', '$stok' ,'$hbeli', '$hjual', null)";
+$query = "INSERT INTO barang VALUES('$kode', '$sup', '$kategori', '$nama', '$satuan', '$stok' ,'$hbeli', '$hjual', null)";
 $succes = mysqli_query($conn, $query);
 
 $querys = "SELECT * FROM barang";

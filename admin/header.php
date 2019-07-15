@@ -114,8 +114,8 @@ $username = $_SESSION['username'];
                     <li class="nav-item">
                         <a class="nav-link" href="#tran" data-toggle="collapse"><span class="fa fa-sticky-note-o"></span> Laporan</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="logout.php" onclick="logout()"><span class="fa fa-sign-out"></span> Log Out</a>
+                    <li class="nav-item" style="color: rgb(0,125,255);">
+                        <a class="nav-link" onclick="logout()" id="logout"><span class="fa fa-sign-out"></span> Log Out</a>
                     </li>
                 </ul>
             </div>
