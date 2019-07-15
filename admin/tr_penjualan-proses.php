@@ -39,25 +39,10 @@ $query = "INSERT INTO penjualan VALUES('$kode_tr', '$tgl', '$nama', '$alamat', '
 $succes = mysqli_query($conn, $query);
 
 if ($insert_detil && $succes) {
-    header('location: transaksi_penjualan.php');
+    header('location: transaksi_penjualan.php?pesan=jual_sukses');
 }else{
     echo mysqli_error($con);
 }
-
-
-$querys = "SELECT * FROM penjualan";
-$row = mysqli_query($conn, $querys);
-while ($data = mysqli_fetch_assoc($row)) {
-
-if($succes){
-    header('location: transaksi_penjualan.php');
-}else if($kode==$data['kode_tr']){
-    header("location:transaksi_penjualan.php?pesan=gagal");
-}else{
-    echo mysqli_error($conn);
-}
 mysqli_close($conn);
-
-}
 
 ?>

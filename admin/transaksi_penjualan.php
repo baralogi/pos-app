@@ -18,6 +18,13 @@ include 'header.php'
         $x = date('Ymd.hisms');
 
         ?>
+        <?php
+        if (isset($_GET['pesan'])) {
+            if ($_GET['pesan'] == "jual_sukses") {
+                echo "<div style='margin-bottom:2%' class='alert alert-success' role='alert'></span>  Data Penjualan Berhasil Disimpan!!</div>";
+            }
+        }
+        ?>
         <form action="tr_penjualan-proses.php" method="POST">
             <div style="margin-bottom: 1em;">
                 <div class="row">
