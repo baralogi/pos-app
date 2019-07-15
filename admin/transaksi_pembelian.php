@@ -38,7 +38,7 @@ include 'header.php';
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Nama" name="nama" id="nm">
+                            <input type="text" class="form-control" placeholder="Nama" name="nama" id="nm" readonly>
                         </div>
                     </div>
                 </div>
@@ -62,12 +62,12 @@ include 'header.php';
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Telepon" name="tlp" id="tlp">
+                            <input type="text" class="form-control" placeholder="Telepon" name="tlp" id="tlp" readonly>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Email" name="email" id="email">
+                            <input type="text" class="form-control" placeholder="Email" name="email" id="email" readonly>
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@ include 'header.php';
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Alamat" name="alm" id="alm">
+                            <input type="text" class="form-control" placeholder="Alamat" name="alm" id="alm" readonly>
                         </div>
                     </div>
                 </div>
