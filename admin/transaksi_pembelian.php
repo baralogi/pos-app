@@ -4,7 +4,6 @@ include 'header.php';
 ?>
 
 
-
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
@@ -89,7 +88,7 @@ include 'header.php';
 
             <div class="row">
                 <div class="col-auto">
-                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">+</button>
+                    <button type="button" class="btn btn-outline-primary" id="plus" data-toggle="modal" data-target="#exampleModal">+</button>
                 </div>
                 <div class="col-md-2">
                     <input type="text" class="form-control" placeholder="Kode Barang" name="kode" id="kode">

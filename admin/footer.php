@@ -172,7 +172,7 @@
             var valSelect = $(this).val()
             $.ajax({
                 type: "POST",
-                url: "supplier-cuk.php?id="+valSelect,
+                url: "supplierku.php?id="+valSelect,
                 data: "id=valSelect",
                 dataType: "json",
                 cache: false,
@@ -182,7 +182,7 @@
                     document.getElementById("alm").value = response["alamat"];
                     document.getElementById("tlp").value = response["no_hp"];
                     document.getElementById("email").value = response["email"];
-                  
+                    
                 }
             });
         });
